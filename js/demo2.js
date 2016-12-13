@@ -1,8 +1,36 @@
-// print the result of dividing the given parameters
-function divide(numerator, denominator) {
-    console.log(numerator + "/" + denominator);
-    return numerator/denominator;
+
+function foo(input) {
+    return input + 6 * 100 / 4 + 21 * input
 }
-var answer = divide(10, 0);
-console.log("answer = " + answer);
-console.log("Is that answer correct?");
+
+function bar(input) {
+
+    var anotherFunction = function(input) {
+        input = input + 3000 * 42 - 423;
+        return input + 1000 / 2;
+    };
+
+    var andAnotherFunction = function(input) {
+        input = 800 + input * input
+        return input * 3 * 100 * 4 / 17 + 380;
+    };
+
+    var firstValue = anotherFunction(input);
+    var secondValue = andAnotherFunction(firstValue);
+    return secondValue;
+}
+
+function recurse(value) {
+    if (value < 100000) {
+        return value;
+    } else {
+        return recurse(value / 20);
+    }
+}
+
+var value = foo(25);
+value = bar(value);
+
+value = recurse(value);
+
+console.log(value);
